@@ -1,112 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'app_colors.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'package:selaty/core/themes/app_colors.dart';
 
 class AppStyles {
-  // عناوين رئيسية
-  static TextStyle font26W900 = TextStyle(
-    fontSize: 26.0.sp,
-    fontWeight: FontWeight.w900,
-    color: AppColors.black,
-  );
-  
-  static TextStyle font22W800 = TextStyle(
-    fontSize: 22.0.sp,
-    fontWeight: FontWeight.w800,
-    color: AppColors.black,
-  );
-  
-  static TextStyle font18W700 = TextStyle(
-    fontSize: 18.0.sp,
-    fontWeight: FontWeight.w700,
-    color: AppColors.black,
-  );
-  
-  // نصوص فرعية
-  static TextStyle font16W600 = TextStyle(
-    fontSize: 16.0.sp,
-    fontWeight: FontWeight.w600,
-    color: AppColors.greyMedium,
-  );
-  
-  static TextStyle font16W500 = TextStyle(
-    fontSize: 16.0.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.black,
-  );
-  
-  static TextStyle font14W500 = TextStyle(
-    fontSize: 14.0.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.greyMedium,
-  );
-  
-  // نصوص الجسم
-  static TextStyle font16W400 = TextStyle(
-    fontSize: 16.0.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.black,
-  );
-  
-  static TextStyle font14W400 = TextStyle(
-    fontSize: 14.0.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.greyMedium,
-  );
-  
-  // أنماط أزرار
-  static TextStyle font16W700White = TextStyle(
-    fontSize: 16.0.sp,
-    fontWeight: FontWeight.w700,
-    color: AppColors.white,
-  );
-  
-  static TextStyle font16W700Green = TextStyle(
-    fontSize: 16.0.sp,
-    fontWeight: FontWeight.w700,
-    color: AppColors.primaryGreenDark,
-  );
-  
-  // أسعار
-  static TextStyle font18W800Green = TextStyle(
-    fontSize: 18.0.sp,
-    fontWeight: FontWeight.w800,
-    color: AppColors.primaryGreenDark,
-  );
-  
-  static TextStyle font14W400LineThrough = TextStyle(
-    fontSize: 14.0.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.greyMedium,
+  static TextStyle cairoStyle(double size, FontWeight weight, Color color) {
+    return GoogleFonts.cairo(
+      fontSize: size.sp,
+      fontWeight: weight,
+      color: color,
+    );
+  }
+
+  static TextStyle font26W900 = cairoStyle(26, FontWeight.w900, AppColors.black);
+  static TextStyle font22W800 = cairoStyle(22, FontWeight.w800, AppColors.black);
+  static TextStyle font18W700 = cairoStyle(18, FontWeight.w700, AppColors.black);
+  static TextStyle font16W600 = cairoStyle(16, FontWeight.w600, AppColors.greyMedium);
+  static TextStyle font16W500 = cairoStyle(16, FontWeight.w500, AppColors.black);
+  static TextStyle font14W500 = cairoStyle(14, FontWeight.w500, AppColors.greyMedium);
+  static TextStyle font16W400 = cairoStyle(16, FontWeight.w400, AppColors.black);
+  static TextStyle font14W400 = cairoStyle(14, FontWeight.w400, AppColors.greyMedium);
+  static TextStyle font16W700White = cairoStyle(16, FontWeight.w700, AppColors.white);
+  static TextStyle font16W700Green = cairoStyle(16, FontWeight.w700, AppColors.primaryGreenDark);
+  static TextStyle font18W800 = cairoStyle(18, FontWeight.w800, AppColors.black);
+  static TextStyle font14W400LineThrough = cairoStyle(14, FontWeight.w400, AppColors.greyMedium).copyWith(
     decoration: TextDecoration.lineThrough,
   );
-  
-  // فئات
-  static TextStyle font14W600 = TextStyle(
-    fontSize: 14.0.sp,
-    fontWeight: FontWeight.w600,
-    color: AppColors.black,
-  );
-  
-  // بحث
-  static TextStyle font14W400Grey = TextStyle(
-    fontSize: 14.0.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.greyMedium,
-  );
-  
-  // شريط تنقل
-  static TextStyle font12W500 = TextStyle(
-    fontSize: 12.0.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.black,
-  );
-  
-  // تقييمات
-  static TextStyle font12W600 = TextStyle(
-    fontSize: 12.0.sp,
-    fontWeight: FontWeight.w600,
-    color: AppColors.black,
-  );
+  static TextStyle font14W600 = cairoStyle(14, FontWeight.w600, AppColors.black);
+  static TextStyle font14W400Grey = cairoStyle(14, FontWeight.w400, AppColors.greyMedium);
+  static TextStyle font12W500 = cairoStyle(12, FontWeight.w500, AppColors.black);
+  static TextStyle font12W600 = cairoStyle(12, FontWeight.w600, AppColors.black);
 }
