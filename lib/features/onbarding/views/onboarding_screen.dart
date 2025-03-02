@@ -12,7 +12,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State {
   int index = 0;
-  PageController controller = PageController(); // لا تحتاج لجعلها nullable
+  PageController controller = PageController(); 
 
   @override
   Widget build(BuildContext context) {
@@ -84,8 +84,8 @@ class _OnboardingScreenState extends State {
           ),
           Positioned(
             bottom: isLandscape
-                ? screenSize.height * 0.15
-                : screenSize.height * 0.19,
+                ? screenSize.height * 0.14
+                : screenSize.height * 0.15,
             right: screenSize.width * 0.1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
