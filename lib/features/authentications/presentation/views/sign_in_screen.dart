@@ -37,17 +37,7 @@ class SignInScreen extends StatelessWidget {
                     hintText: "عنوان البريد الالكتروني",
                   ),
                   verticalSpace(20),
-                  AuthTextfield(
-                    hintText: "كلمة المرور",
-                    obscureText: true,
-                    icon:
-                        const Icon(Icons.remove_red_eye, color: Colors.grey),
-                  ),
-                  verticalSpace(10),
-                   Align(alignment: Alignment.centerRight,
-                    child: Text(" هل نسيت كلمة المرور " ,textAlign: TextAlign.end,
-                        style:AppStyles.font14W600),
-                  ),
+                  SignInTextFields(),
                   verticalSpace(30),
                   CustomButton(
                       text: "تسجيل الدخول",
@@ -77,5 +67,30 @@ class SignInScreen extends StatelessWidget {
                         ),
             )
         )));
+  }
+}
+
+class SignInTextFields extends StatelessWidget {
+  const SignInTextFields({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        AuthTextfield(
+          hintText: "كلمة المرور",
+          obscureText: true,
+          icon:
+              const Icon(Icons.remove_red_eye, color: Colors.grey),
+        ),
+        verticalSpace(10),
+         Align(alignment: Alignment.centerRight,
+          child: Text(" هل نسيت كلمة المرور " ,textAlign: TextAlign.end,
+              style:AppStyles.font14W600),
+        ),
+      ],
+    );
   }
 }
