@@ -8,8 +8,8 @@ class OnboardingBody extends StatelessWidget {
   final Color color1,color2,color3;
   final String text1,text2;
   final Color buttonColor;
-  final void Function()? onTap;
-  const OnboardingBody({super.key, this.isLandscape = false, required this.icon, required this.color1, required this.color2, required this.color3, required this.text1, required this.text2, required this.buttonColor, this.onTap});
+  
+  const OnboardingBody({super.key, this.isLandscape = false, required this.icon, required this.color1, required this.color2, required this.color3, required this.text1, required this.text2, required this.buttonColor, });
   
 
   @override
@@ -42,7 +42,7 @@ class OnboardingBody extends StatelessWidget {
               ),
             ],
           ),
-          TitlesAndButton(buttonColor:buttonColor ,text1: text1, text2: text2,onTap: onTap,),
+          TitlesOnboarding(buttonColor:buttonColor ,text1: text1, text2: text2,),
           
         ],
       ),

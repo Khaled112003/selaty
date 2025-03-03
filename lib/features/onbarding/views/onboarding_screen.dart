@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:selaty/features/onbarding/views/wigets/custom_indicator.dart';
 import 'package:selaty/features/onbarding/views/wigets/onboarding_body.dart';
@@ -12,7 +13,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State {
   int index = 0;
-  PageController controller = PageController(); 
+  PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _OnboardingScreenState extends State {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(8.sp),
             child: PageView(
               controller: controller,
               onPageChanged: (value) {
@@ -47,11 +48,6 @@ class _OnboardingScreenState extends State {
                   text1: "البحث بالقرب منك",
                   text2: "ابحث عن المتاجر المفضلهالتي تريدها بموقعك ",
                   buttonColor: onBoardingScreenColors(index)[2],
-                  onTap: () => controller.animateToPage(
-                    index + 1,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  ),
                 ),
                 OnboardingBody(
                   isLandscape: isLandscape,
@@ -62,14 +58,8 @@ class _OnboardingScreenState extends State {
                   text1: " عروض طازجه وجوده",
                   text2: "جميع العناصر لها نضاره حقيقيه متخصصه لاحتياجك",
                   buttonColor: onBoardingScreenColors(index)[2],
-                  onTap: () => controller.animateToPage(
-                    index + 1,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  ),
                 ),
                 OnboardingBody(
-                  onTap: () => context.go("/auth"),
                   isLandscape: isLandscape,
                   icon: Icon(Icons.check),
                   color1: onBoardingScreenColors(index)[0],
@@ -82,11 +72,44 @@ class _OnboardingScreenState extends State {
               ],
             ),
           ),
+          
           Positioned(
             bottom: isLandscape
-                ? screenSize.height * 0.14
-                : screenSize.height * 0.15,
-            right: screenSize.width * 0.1,
+                ? screenSize.height * 0.08.h
+                : screenSize.height * 0.125.h,
+            left: screenSize.width * 0.1.w,
+            child: GestureDetector(
+              onTap: () {
+                if (index < 2) {
+                  controller.animateToPage(
+                    index + 1,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                } else {
+                  context.go("/auth");
+                }
+              },
+              child: Container(
+                width: isLandscape ? 50.w : 55.w,
+                height: isLandscape ? 50.h : 55.h,
+                decoration: BoxDecoration(
+                  color: onBoardingScreenColors(index)[2],
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  index < 2 ? Icons.arrow_forward : Icons.check,
+                  color: Colors.white,
+                  size: isLandscape ? 25.h : 30.h,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: isLandscape
+                ? screenSize.height * 0.14.h
+                : screenSize.height * 0.15.h,
+            right: screenSize.width * 0.1.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(3, (i) {
@@ -111,23 +134,19 @@ class _OnboardingScreenState extends State {
 List<Color> onBoardingScreenColors(int index) {
   if (index == 0) {
     return [
-      Colors.red.shade100.withValues(alpha: 0.5),
-
+      Colors.red.shade100.withOpacity(0.5),
       Colors.red.shade100,
       Colors.red.shade400,
-      
     ];
   } else if (index == 1) {
     return [
-       Colors.green.shade100.withValues(alpha: 0.5),
-
+      Colors.green.shade100.withOpacity(0.5),
       Colors.green.shade100,
       Colors.green.shade400,
     ];
   } else {
     return [
-      Colors.grey.shade200.withValues(alpha: 0.5),
-
+      Colors.grey.shade200.withOpacity(0.5),
       Colors.grey.shade300,
       const Color.fromARGB(255, 100, 95, 95),
     ];

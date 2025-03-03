@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/widgets/custom_button.dart';
 
@@ -33,11 +34,13 @@ class SignInOrSignUp extends StatelessWidget {
                   ),
                   verticalSpace(50),
                   CustomButton(
+                    onPressed: () => context.push('/sign-in'),
                       text: "تسجيل الدخول",
                       colortext: Colors.white,
                       backgroundcolor: Colors.red),
                   verticalSpace(20),
                         CustomButton(
+                          onPressed: () => context.push('/sign-up'),
                       text: "انشئ حساب",
                       colortext: Colors.white,
                       backgroundcolor: Colors.green)

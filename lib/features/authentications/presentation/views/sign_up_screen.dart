@@ -1,0 +1,142 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:selaty/core/helpers/spacing.dart';
+import 'package:selaty/core/themes/app_styles.dart';
+import 'package:selaty/core/widgets/appbar_items.dart';
+import 'package:selaty/core/widgets/auth_textfield.dart';
+
+import '../../../../core/widgets/custom_button.dart';
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, bottom: 10, top: 10),
+                child: Column(children: [
+                  AppBarItems(),
+                  verticalSpace(40),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "انشاء حساب جديد",
+                          style: AppStyles.font18W700,
+                        ),
+                        Text(
+                          "ادخل بياناتك لانشاء حساب جديد",
+                          style:
+                              AppStyles.font14W400.copyWith(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ),
+                  verticalSpace(40),
+                  AuthTextfield(hintText: "اسم المستخدم"),
+                  verticalSpace(20),
+                  AuthTextfield(
+                    icon: const Icon(Icons.check_circle_outline,
+                        color: Colors.green),
+                    hintText: "عنوان البريد الالكتروني",
+                  ),
+                  verticalSpace(20),
+                  AuthTextfield(
+                    hintText: "كلمة المرور",
+                    obscureText: true,
+                    icon: const Icon(Icons.remove_red_eye, color: Colors.grey),
+                  ),
+                  verticalSpace(20),
+                  CustomButton(
+                      text: "اشتراك",
+                      colortext: Colors.white,
+                      backgroundcolor: Colors.green),
+                  verticalSpace(30),
+                  Text(
+                    "أو أشترك مع",
+                    style: AppStyles.font14W500,
+                  ),
+                  verticalSpace(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      FaceOrGoogle(
+                        capitalText: "f",
+                        smallText: "Facebook",
+                        colorText: Colors.blue,
+                      ),
+                      FaceOrGoogle(
+                        capitalText: "G+",
+                        smallText: "Google",
+                        colorText: Colors.red,
+                      ),
+                    ],
+                  ),
+                  verticalSpace(80),
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                              Text( "تسجيل الدخول",style: AppStyles.font14W500,),
+                              
+                              Icon(Icons.arrow_right,size: 25.sp,)
+                            ],),
+                            Row(
+                              children: [
+                              Text( "لديك حساب بالفعل؟",style: AppStyles.font14W500,),
+                              
+                              
+                          ],
+                        )
+                                      ],
+                                    ),
+                ])),
+          ),
+        ));
+  }
+}
+
+class FaceOrGoogle extends StatelessWidget {
+  const FaceOrGoogle(
+      {super.key,
+      required this.capitalText,
+      required this.smallText,
+      required this.colorText});
+  final String capitalText;
+  final String smallText;
+  final Color colorText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      height: 70,
+      decoration: BoxDecoration(
+          color: Colors.white70,
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: colorText, width: 1)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            capitalText,
+            style: AppStyles.font20W800.copyWith(color:colorText),
+          ),
+          Text(
+            smallText,
+            style: AppStyles.font14W500.copyWith(color: colorText),
+          ),
+        ],
+        
+      ),
+
+    );
+  }
+}
