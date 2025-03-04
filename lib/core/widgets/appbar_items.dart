@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:selaty/core/themes/app_styles.dart';
 
 class AppBarItems extends StatelessWidget {
   const AppBarItems({
-    super.key,
+    super.key, this.title,
   });
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,8 @@ class AppBarItems extends StatelessWidget {
                 Icons.arrow_back,
                 color: Colors.black,
               )),
-        ),
+        ), 
+        Text(title ?? "", style:AppStyles.font16W600,),
         Container(
            width: 45,
           height: 40,

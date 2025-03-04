@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:selaty/features/onbarding/views/wigets/titles_and_button.dart';
+import 'package:selaty/features/onbarding/views/wigets/titles_onboarding.dart';
 
 class OnboardingBody extends StatelessWidget {
   final bool isLandscape;
