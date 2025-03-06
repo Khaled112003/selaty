@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/themes/app_styles.dart';
 import 'package:selaty/core/widgets/appbar_items.dart';
@@ -58,7 +59,9 @@ class SignUpScreen extends StatelessWidget {
                   CustomButton(
                       text: "اشتراك",
                       colortext: Colors.white,
-                      backgroundcolor: Colors.green),
+                      backgroundcolor: Colors.green,
+                      onPressed: () => context.go('/home-pages'),
+                      ),
                   verticalSpace(30),
                   Text(
                     "أو أشترك مع",

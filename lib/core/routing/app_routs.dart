@@ -5,6 +5,8 @@ import 'package:selaty/features/authentications/presentation/views/sign_in_scree
 import 'package:selaty/features/authentications/presentation/views/sign_up_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/forget_pass_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/verification_screen.dart';
+import 'package:selaty/features/home/presentations/views/home_screen.dart';
+import 'package:selaty/features/home/presentations/views/widgets/home_pages_screen.dart';
 import 'package:selaty/features/onbarding/views/onboarding_screen.dart';
 import 'package:selaty/features/splash/splash_screen.dart';
 
@@ -12,7 +14,7 @@ final router = GoRouter(
   routes: [
    
     GoRoute(
-      path: '/',    
+      path: '/kjh',    
       builder: (context, state) => const SplashScreen(),
     ),
      GoRoute(
@@ -39,5 +41,14 @@ final router = GoRouter(
       path:'/verification',    
       builder: (context, state) => const VerificationScreen(),
     ),
+    GoRoute(
+      path:'/home',    
+      builder: (context, state) => const HomeScreen(),
+    ),
+     GoRoute(
+      path:'/',    
+      builder: (context, state) => const HomePagesScreen(),
+    ),
+
   ],
 );
