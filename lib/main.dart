@@ -17,6 +17,13 @@ class Selaty extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: MaterialApp.router(
+        locale: const Locale('ar'), // تحديد اللغة العربية
+  builder: (context, child) {
+    return Directionality(
+      textDirection: TextDirection.rtl, // جعل الاتجاه من اليمين إلى اليسار
+      child: child!,
+    );
+  },
         routerConfig: router,
         
          debugShowCheckedModeBanner: false,
