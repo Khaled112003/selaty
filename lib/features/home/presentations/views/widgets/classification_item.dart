@@ -22,7 +22,7 @@ class ClassificationItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+            padding:  EdgeInsets.only(top: 8.0.h, bottom: 4.0.w),
             child: Text(
               "خضروات",
               style: AppStyles.font12W600,
