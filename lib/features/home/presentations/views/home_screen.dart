@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/widgets/auth_textfield.dart';
+import 'package:selaty/features/home/presentations/views/widgets/best_seller.dart';
 import 'package:selaty/features/home/presentations/views/widgets/hight_sales.dart';
 import 'package:selaty/features/home/presentations/views/widgets/information_user.dart';
 
@@ -57,7 +58,8 @@ class HomeScreen extends StatelessWidget {
               ),
              HighestSales(),
              Classification(),
-             verticalSpace(100)
+             verticalSpace(10),
+             BestSeller(),
             ],
           ),
         ),

@@ -73,8 +73,8 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
   bottom: isLandscape ? 5.h : 15.h, 
   child: IgnorePointer( 
     child: Container(
-      width: isLandscape ? 170.w : 70.w, 
-      height: isLandscape ? 170.h : 70.h,
+      width: isLandscape ? 60.w : 70.w, 
+      height: isLandscape ? 35.h : 70.h,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,

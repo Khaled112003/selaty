@@ -30,4 +30,7 @@ class AppStyles {
   static TextStyle font12W600 = cairoStyle(12, FontWeight.w600);
   // font20W800
   static TextStyle font20W800 = cairoStyle(20, FontWeight.w800);
+  // font10W800
+  static TextStyle font5W800 = cairoStyle(6, FontWeight.w800);
+  
 }

@@ -40,7 +40,7 @@ class HighestSales extends StatelessWidget {
         ),
         verticalSpace(10),
         SizedBox(
-          height:ScreenHelper.isLandscape(context)? 200.h:160.h,
+          height:ScreenHelper.isLandscape(context)? 120.h:160.h,
           width: double.infinity,
           child: ListView(
          
