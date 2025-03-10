@@ -14,7 +14,7 @@ final router = GoRouter(
   routes: [
    
     GoRoute(
-      path: '/',    
+      path: '/e',    
       builder: (context, state) => const SplashScreen(),
     ),
      GoRoute(
@@ -46,9 +46,9 @@ final router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
      GoRoute(
-      path:'/home-pages',    
+      path:'/',    
       builder: (context, state) => const HomePagesScreen(),
     ),
-
+// /home-pages
   ],
 );

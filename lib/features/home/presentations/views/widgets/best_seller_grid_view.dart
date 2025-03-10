@@ -17,7 +17,9 @@ class BestSellerGridView extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) => BestSellerItem(),
+      itemBuilder: (context, index) => BestSellerItem(
+        img: "assets/images/fruit_icon.png",
+      ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 10,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/widgets/auth_textfield.dart';
 import 'package:selaty/features/home/presentations/views/widgets/best_seller.dart';
@@ -8,6 +9,8 @@ import 'package:selaty/features/home/presentations/views/widgets/information_use
 import 'package:selaty/features/home/presentations/views/widgets/shop_by_offers.dart';
 
 import 'widgets/classification.dart';
+import 'widgets/fresh_and_fast.dart';
+import 'widgets/image_item.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,7 +26,8 @@ class HomeScreen extends StatelessWidget {
             children: [
               const InformationUser(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   children: [
                     Container(
@@ -41,7 +45,6 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     horizontalSpace(10),
-                    
                     Expanded(
                       child: AuthTextfield(
                         hintText: "البحث في المنتجات",
@@ -52,17 +55,18 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                   
-                    
                   ],
                 ),
               ),
-             HighestSales(),
-             Classification(),
-             verticalSpace(10),
-             BestSeller(),
-             ShopByOffers(),
-             verticalSpace(20),
+              HighestSales(),
+              Classification(),
+              verticalSpace(10),
+              BestSeller(),
+              ShopByOffers(),
+              verticalSpace(10),
+              FreshAndFast(),
+              verticalSpace(20),
+              ImageItem()
             ],
           ),
         ),

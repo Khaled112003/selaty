@@ -6,7 +6,8 @@ import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/themes/app_styles.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  const BestSellerItem({super.key, required this.img});
+  final String img;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,23 @@ class BestSellerItem extends StatelessWidget {
                 ? ScreenHelper.screenSize(context).height * 0.25
                 : ScreenHelper.screenSize(context).height * 0.15,
             child: Stack(
-              fit: StackFit.expand,
+              
               children: [
+                 Align(
+                  alignment: Alignment.center,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                    child: Image.asset( img 
+                    ,
+                      width: ScreenHelper.screenSize(context).width *
+                          (isLandscape ? 0.4 : 0.4),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
                 Positioned(
                   top: 10.h,
                   left: 10.w,
@@ -58,21 +74,7 @@ class BestSellerItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    child: Image.asset(
-                      "assets/images/fruit_icon.png",
-                      width: ScreenHelper.screenSize(context).width *
-                          (isLandscape ? 0.4 : 0.45),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
+               
               ],
             ),
           ),

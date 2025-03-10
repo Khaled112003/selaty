@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:selaty/core/themes/app_styles.dart';
 
 class TitleCatogrey extends StatelessWidget {
@@ -12,7 +13,7 @@ class TitleCatogrey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding:  EdgeInsets.symmetric(horizontal: 20.w),
       child: Row(
         children: [
           Text(title
@@ -23,7 +24,7 @@ class TitleCatogrey extends StatelessWidget {
           Icon(
             Icons.arrow_back_ios_new_rounded,
             color: const Color.fromARGB(255, 0, 0, 0),
-            size: 17,
+            size: 17.sp,
           ),
           Text(
             "مشاهده الكل ",
