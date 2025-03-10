@@ -4,7 +4,8 @@ import 'package:selaty/core/themes/app_styles.dart';
 
 class AppBarItems extends StatelessWidget {
   const AppBarItems({
-    super.key, this.title,
+    super.key,
+    this.title,
   });
   final String? title;
 
@@ -22,16 +23,19 @@ class AppBarItems extends StatelessWidget {
               border: Border.all(color: Colors.grey.shade300, width: 1)),
           child: IconButton(
               onPressed: () {
-                context.pop();  
+                // Navigate back to the previous screen
               },
               icon: const Icon(
-                Icons.arrow_back,
+                Icons.archive_outlined,
                 color: Colors.black,
               )),
-        ), 
-        Text(title ?? "", style:AppStyles.font16W600,),
+        ),
+        Text(
+          title ?? "",
+          style: AppStyles.font16W600,
+        ),
         Container(
-           width: 45,
+          width: 45,
           height: 40,
           decoration: BoxDecoration(
               color: Colors.white70,
@@ -39,10 +43,10 @@ class AppBarItems extends StatelessWidget {
               border: Border.all(color: Colors.grey.shade300, width: 1)),
           child: IconButton(
               onPressed: () {
-                // Navigate back to the previous screen
+                context.pop();
               },
               icon: const Icon(
-                Icons.archive_outlined,
+                Icons.arrow_forward,
                 color: Colors.black,
               )),
         ),

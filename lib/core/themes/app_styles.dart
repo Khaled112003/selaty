@@ -9,6 +9,9 @@ class AppStyles {
       fontWeight: weight,
     );
   }
+ 
+
+
 
   static TextStyle font26W900 = cairoStyle(26, FontWeight.w900);
   static TextStyle font22W800 = cairoStyle(22, FontWeight.w800);
@@ -32,5 +35,8 @@ class AppStyles {
   static TextStyle font20W800 = cairoStyle(20, FontWeight.w800);
   // font10W800
   static TextStyle font5W800 = cairoStyle(6, FontWeight.w800);
-  
+  static TextStyle font40W900 = cairoStyle(40, FontWeight.w900);
+
+    static TextStyle font50W900 = cairoStyle(50, FontWeight.w900);
+
 }

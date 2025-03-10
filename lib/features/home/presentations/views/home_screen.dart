@@ -5,6 +5,7 @@ import 'package:selaty/core/widgets/auth_textfield.dart';
 import 'package:selaty/features/home/presentations/views/widgets/best_seller.dart';
 import 'package:selaty/features/home/presentations/views/widgets/hight_sales.dart';
 import 'package:selaty/features/home/presentations/views/widgets/information_user.dart';
+import 'package:selaty/features/home/presentations/views/widgets/shop_by_offers.dart';
 
 import 'widgets/classification.dart';
 
@@ -60,6 +61,8 @@ class HomeScreen extends StatelessWidget {
              Classification(),
              verticalSpace(10),
              BestSeller(),
+             ShopByOffers(),
+             verticalSpace(20),
             ],
           ),
         ),

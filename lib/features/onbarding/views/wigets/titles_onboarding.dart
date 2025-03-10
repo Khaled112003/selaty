@@ -16,10 +16,10 @@ class TitlesOnboarding extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Align(alignment: AlignmentDirectional.centerEnd,
+    return Align(alignment: AlignmentDirectional.centerStart,
       child: Column(
         
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
            text1,
@@ -33,13 +33,14 @@ class TitlesOnboarding extends StatelessWidget {
           verticalSpace(isLandscape ? 10 : 20),
           Text(
             text2,
-            textAlign: TextAlign.end,
+            
             style: AppStyles.font18W800.copyWith(
               color: const Color.fromARGB(255, 106, 105, 105),
               fontSize: isLandscape ? 16 : 18,
             ),
-          ),
-          verticalSpace(isLandscape ? 50 : 90),
+          )
+          ,
+          verticalSpace(isLandscape ? 10 : 50),
           
         ],
       ),

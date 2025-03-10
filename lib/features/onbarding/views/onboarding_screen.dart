@@ -75,7 +75,7 @@ class _OnboardingScreenState extends State {
           
           Positioned(
             bottom: isLandscape
-                ? screenSize.height * 0.08.h
+                ? screenSize.height * 0.02.h
                 : screenSize.height * 0.125.h,
             left: screenSize.width * 0.1.w,
             child: GestureDetector(
@@ -107,7 +107,7 @@ class _OnboardingScreenState extends State {
           ),
           Positioned(
             bottom: isLandscape
-                ? screenSize.height * 0.14.h
+                ? screenSize.height * 0.08.h
                 : screenSize.height * 0.15.h,
             right: screenSize.width * 0.1.w,
             child: Row(
