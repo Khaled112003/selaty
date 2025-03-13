@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:selaty/features/home/presentations/views/home_screen.dart';
+import 'package:selaty/features/user/presentation/views/user_screen.dart';
 
 class HomePagesScreen extends StatefulWidget {
   const HomePagesScreen({super.key});
@@ -21,7 +22,7 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
   }
 
   List<Widget> pages = [
-    HomeScreen(),
+    UserScreen(),
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
@@ -33,6 +34,7 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
     final Size screenSize = MediaQuery.of(context).size;
     final bool isLandscape = screenSize.width > screenSize.height;
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       body: pages[currentIndex],
       bottomNavigationBar: Stack(
         clipBehavior: Clip.none,

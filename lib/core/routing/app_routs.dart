@@ -5,6 +5,7 @@ import 'package:selaty/features/authentications/presentation/views/sign_in_scree
 import 'package:selaty/features/authentications/presentation/views/sign_up_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/forget_pass_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/verification_screen.dart';
+import 'package:selaty/features/home/presentations/views/classification_screen.dart';
 import 'package:selaty/features/home/presentations/views/home_screen.dart';
 import 'package:selaty/features/home/presentations/views/home_pages_screen.dart';
 import 'package:selaty/features/onbarding/views/onboarding_screen.dart';
@@ -48,6 +49,10 @@ final router = GoRouter(
      GoRoute(
       path:'/',    
       builder: (context, state) => const HomePagesScreen(),
+    ),
+    GoRoute(
+      path:'/classification',    
+      builder: (context, state) => const ClassificationScreen(),
     ),
 // /home-pages
   ],
