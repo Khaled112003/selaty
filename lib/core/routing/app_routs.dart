@@ -3,9 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:selaty/features/authentications/presentation/views/sign_in_or_sign_up_screen.dart';
 import 'package:selaty/features/authentications/presentation/views/sign_in_screen.dart';
 import 'package:selaty/features/authentications/presentation/views/sign_up_screen.dart';
+import 'package:selaty/features/classifications/presentation/views/frutes_catogrey_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/forget_pass_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/verification_screen.dart';
-import 'package:selaty/features/home/presentations/views/classification_screen.dart';
+import 'package:selaty/features/classifications/presentation/views/classification_screen.dart';
 import 'package:selaty/features/home/presentations/views/home_screen.dart';
 import 'package:selaty/features/home/presentations/views/home_pages_screen.dart';
 import 'package:selaty/features/onbarding/views/onboarding_screen.dart';
@@ -54,6 +55,10 @@ final router = GoRouter(
       path:'/classification',    
       builder: (context, state) => const ClassificationScreen(),
     ),
-// /home-pages
+    GoRoute(
+      path:'/frutes-catogrey',    
+      builder: (context, state) => const FrutesCatogreyScreen(),
+    ),
+
   ],
 );

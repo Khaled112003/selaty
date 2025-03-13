@@ -5,7 +5,7 @@ import 'package:selaty/core/helpers/screen_helper.dart';
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/widgets/appbar_items.dart';
 import 'package:selaty/features/home/presentations/views/widgets/log_out.dart';
-import 'package:selaty/features/user/presentation/views/user_service_grid_view.dart';
+import 'package:selaty/features/user/presentation/views/widget/user_service_grid_view.dart';
 
 import 'widget/image_and_user_name.dart';
 

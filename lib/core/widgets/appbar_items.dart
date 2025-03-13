@@ -32,7 +32,7 @@ class AppBarItems extends StatelessWidget {
         ),
         Text(
           title ?? "",
-          style: AppStyles.font16W600,
+          style: AppStyles.font16W600.copyWith(color: Colors.white),
         ),
         Container(
           width: 45,
