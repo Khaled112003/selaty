@@ -18,7 +18,7 @@ class AppBarItems extends StatelessWidget {
           width: 45,
           height: 40,
           decoration: BoxDecoration(
-              color: Colors.white70,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: Colors.grey.shade300, width: 1)),
           child: IconButton(
@@ -32,13 +32,13 @@ class AppBarItems extends StatelessWidget {
         ),
         Text(
           title ?? "",
-          style: AppStyles.font16W600.copyWith(color: Colors.white),
+          style: AppStyles.font16W600.copyWith(color: Colors.black),
         ),
         Container(
           width: 45,
           height: 40,
           decoration: BoxDecoration(
-              color: Colors.white70,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: Colors.grey.shade300, width: 1)),
           child: IconButton(
