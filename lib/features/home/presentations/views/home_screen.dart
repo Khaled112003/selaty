@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/widgets/search_item.dart';
@@ -21,27 +22,30 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade100,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const InformationUser(),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: SearchItem(),
-              ),
-              HighestSales(),
-              Classification(),
-              verticalSpace(10),
-              BestSeller(),
-              ShopByOffers(),
-              verticalSpace(10),
-              FreshAndFast(),
-              verticalSpace(20),
-              ImageItem(),
-              Opportunities(),
-              verticalSpace(20),
-            ],
+          child: Padding(
+            padding:  EdgeInsets.only(right:  10.0.w ,top: 10.0.h ,bottom: 10.0.h ,left: 5.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const InformationUser(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric( vertical: 10),
+                  child: SearchItem(),
+                ),
+                HighestSales(),
+                Classification(),
+                verticalSpace(10),
+                BestSeller(),
+                ShopByOffers(),
+                verticalSpace(10),
+                FreshAndFast(),
+                verticalSpace(20),
+                ImageItem(),
+                Opportunities(),
+                verticalSpace(20),
+              ],
+            ),
           ),
         ),
       ),

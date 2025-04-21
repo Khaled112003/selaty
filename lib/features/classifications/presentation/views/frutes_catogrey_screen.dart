@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:selaty/core/widgets/search_item.dart';
 import 'package:selaty/features/classifications/presentation/views/widgets/product_grid_view.dart';
@@ -17,7 +18,7 @@ class FrutesCatogreyScreen extends StatelessWidget {
           children: [
           UpperPartScreen(),
           Padding(
-            padding: const EdgeInsets.only(left: 40, right: 40,top: 50),
+            padding:  EdgeInsets.only(left: 40.w, right: 40.w,top: 50.h, bottom: 20.h),
             child: Column(
               children: [
                 SearchItem(),

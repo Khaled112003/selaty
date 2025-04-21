@@ -4,6 +4,10 @@ import 'package:selaty/features/authentications/presentation/views/sign_in_or_si
 import 'package:selaty/features/authentications/presentation/views/sign_in_screen.dart';
 import 'package:selaty/features/authentications/presentation/views/sign_up_screen.dart';
 import 'package:selaty/features/classifications/presentation/views/frutes_catogrey_screen.dart';
+import 'package:selaty/features/delivery/presentation/cubit/active_circle_cubit.dart';
+import 'package:selaty/features/delivery/presentation/views/delivery_screen.dart';
+import 'package:selaty/features/delivery/presentation/views/success_screen.dart';
+import 'package:selaty/features/delivery/presentation/views/tracking_order.dart';
 import 'package:selaty/features/forget_password/presentation/views/forget_pass_screen.dart';
 import 'package:selaty/features/forget_password/presentation/views/verification_screen.dart';
 import 'package:selaty/features/classifications/presentation/views/classification_screen.dart';
@@ -18,7 +22,7 @@ import 'package:selaty/features/splash/splash_screen.dart';
 final router = GoRouter(
   routes: [
     GoRoute(
-      path: '/e',
+      path: '/',
       builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
@@ -50,7 +54,7 @@ final router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/',
+      path: '/screens',
       builder: (context, state) => const HomePagesScreen(),
     ),
     GoRoute(
@@ -68,9 +72,26 @@ final router = GoRouter(
         child: const ShoppingCartScreen(),
       ),
     ),
-     GoRoute(
+    GoRoute(
       path: '/empty-cart',
       builder: (context, state) => const EmptyCartScreen(),
     ),
+    GoRoute(
+      path: '/delivery',
+      builder: (context, state) => BlocProvider(
+        create: (context) => ActiveCircleCubit(),
+        child: const DeliveryScreen(),
+      ),
+    ),
+     GoRoute(
+      path: '/success',
+      builder: (context, state) => const SuccessScreen(),
+    ),
+     GoRoute(
+      path: '/tracking-order',
+      builder: (context, state) => const TrackingOrder(),
+    ),
+    
+
   ],
 );

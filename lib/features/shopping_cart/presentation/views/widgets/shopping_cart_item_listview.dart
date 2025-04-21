@@ -3,12 +3,16 @@ import 'package:selaty/features/shopping_cart/presentation/views/widgets/shoppin
 
 class ShoppingCartItemListview extends StatelessWidget {
   const ShoppingCartItemListview({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder( 
-        itemCount: 8, itemBuilder:  (context, index) => ShoppingCartItem(),),
+      child: ListView.builder(
+        itemCount: 8,
+        itemBuilder: (context, index) => ShoppingCartItem(
+          index: index,
+        ),
+      ),
     );
   }
 }

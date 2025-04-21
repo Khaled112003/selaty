@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -27,6 +28,8 @@ class _OnboardingScreenState extends State {
             child: Image.asset(
               "assets/images/background.jpg",
               fit: isLandscape ? BoxFit.fill : BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
             ),
           ),
           Padding(
@@ -68,6 +71,7 @@ class _OnboardingScreenState extends State {
                   text1: "ابدأ الآن",
                   text2: "استمتع بجميع المزايا",
                   buttonColor: onBoardingScreenColors(index)[2],
+                  iconData: CupertinoIcons.bus,
                 ),
               ],
             ),

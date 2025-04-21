@@ -16,7 +16,7 @@ class ImageItem extends StatelessWidget {
 
     return Padding(
       padding:
-          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          const EdgeInsets.symmetric( vertical: 10),
       child: Stack(
         children: [
           ClipRRect(

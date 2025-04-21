@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:selaty/core/helpers/screen_helper.dart';
 import 'package:selaty/core/helpers/spacing.dart';
 import 'package:selaty/core/themes/app_styles.dart';
 import 'package:selaty/core/widgets/appbar_items.dart';
@@ -12,8 +13,8 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    final bool isLandscape = screenSize.width > screenSize.height;
+     final Size screenSize = ScreenHelper.screenSize(context);
+    final bool isLandscape = ScreenHelper.isLandscape(context);
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -21,63 +22,74 @@ class SignInScreen extends StatelessWidget {
                 padding:  EdgeInsets.only(
                     left: 20.w, right: 20.w, bottom: 10.h, top: 10.h),
                 child: SingleChildScrollView(
-                  child: Column(children: [
-                    const AppBarItems(),
-                    const SizedBox(height: 20),
-                    Image.asset(
-                      "assets/images/logo.png",
-                      width: isLandscape
-                          ? screenSize.width * 0.3
-                          : screenSize.width * 0.45,
-                    ),
-                    verticalSpace(30),
-                   
-                    SignInTextFields(),
-                    verticalSpace(10),
-                    GestureDetector(
-                      onTap: () => context.push('/forget-password'),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(" هل نسيت كلمة المرور ",
-                            textAlign: TextAlign.end,
-                            style: AppStyles.font14W600),
-                      ),
-                    ),
-                    verticalSpace(30),
-                    CustomButton(
-                        text: "تسجيل الدخول",
-                        colortext: Colors.white,
-                        backgroundcolor: Colors.green,
-                        onPressed: () => context.go('/home-pages'),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                            width:isLandscape?screenSize.width*0.65:double.infinity ,
+                    
+                      child: Column( mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                        const AppBarItems(),
+                        verticalSpace(isLandscape ? 1 : 20),
+                        Image.asset(
+                          "assets/images/logo.png",
+                          width: isLandscape
+                            ? screenSize.width * 0.09
+                            : screenSize.width * 0.5,
                         ),
-                        
-                    verticalSpace(100),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "تسجيل الدخول",
-                              style: AppStyles.font14W500,
+                        verticalSpace(isLandscape ? 1 : 30),
+                       
+                        SignInTextFields(),
+                        verticalSpace(isLandscape ? 4 : 10),
+                        GestureDetector(
+                          onTap: () => context.push('/forget-password'),
+                          child: Row(
+                            children: [
+                              Text(" هل نسيت كلمة المرور ",
+                                  
+                                  style: AppStyles.font14W600),
+                            ],
+                          ),
+                        ),
+                        verticalSpace(isLandscape ? 2 : 30),
+                        CustomButton(
+                            text: "تسجيل الدخول",
+                            colortext: Colors.white,
+                            backgroundcolor: Colors.green,
+                            onPressed: () => context.go('/screens'),
                             ),
-                            Icon(
-                              Icons.arrow_right,
-                              size: 25.sp,
+                            
+                        verticalSpace(isLandscape? 10: 100),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  "تسجيل الدخول",
+                                  style: AppStyles.font14W500,
+                                ),
+                                Icon(
+                                  Icons.arrow_right,
+                                  size: 25.sp,
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "لديك حساب بالفعل؟",
+                                  style: AppStyles.font14W500,
+                                ),
+                              ],
                             )
                           ],
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              "لديك حساب بالفعل؟",
-                              style: AppStyles.font14W500,
-                            ),
-                          ],
-                        )
-                      ],
+                        verticalSpace(isLandscape ? 0 : 10),
+                      ]),
                     ),
-                  ]),
+                  ),
                 ))));
   }
 }

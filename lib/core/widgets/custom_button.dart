@@ -25,8 +25,8 @@ class CustomButton extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     final bool isLandscape = screenSize.width > screenSize.height;
     return SizedBox(
-      width: isLandscape ? screenSize.width * 0.5 : double.infinity,
-      height: 60,
+      width: isLandscape ? screenSize.width * 0.65 : double.infinity,
+      height: isLandscape ? 50 : 60,
       child: TextButton(
           style: TextButton.styleFrom(
               backgroundColor: backgroundcolor,

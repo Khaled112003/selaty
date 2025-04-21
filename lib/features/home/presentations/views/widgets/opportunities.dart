@@ -31,7 +31,7 @@ class OpportunitiesItemListView extends StatelessWidget {
       height: ScreenHelper.isLandscape(context) ? 110.h : 170.h,
       child: ListView.builder(
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only( left: 8.0),
           child: OpportunitiesItem(),
         ),
         itemCount: 5,

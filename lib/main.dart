@@ -24,11 +24,12 @@ class Selaty extends StatelessWidget {
           splitScreenMode: true, // دعم الشاشات القابلة للطي
           builder: (context, child) {
             return MaterialApp.router(
+              
               locale: const Locale('ar'), 
               builder: (context, child) {
                 return MediaQuery(
                   data: MediaQuery.of(context).copyWith(
-                    textScaleFactor: orientation == Orientation.portrait ? 1.0 : 1,
+                    textScaleFactor: orientation == Orientation.portrait ? 1.0 : 1.1,
                   ),
                   child: Directionality(
                     textDirection: TextDirection.rtl,

@@ -10,22 +10,20 @@ class ProductGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final isLandscape = ScreenHelper.isLandscape(context);
-    return SizedBox(
-      height:isLandscape? 230.h:  490.h, 
-
-      child: GridView.builder(
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context, index) =>
-            BestSellerItem(img: "assets/images/Strawberry.jpg"),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:isLandscape? 3: 2,
-          mainAxisExtent:isLandscape? 132.h:  225.h,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-         
-        ),
-        itemCount: 8,
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      scrollDirection: Axis.vertical,
+      itemBuilder: (context, index) =>
+          BestSellerItem(img: "assets/images/Strawberry.jpg"),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount:isLandscape? 4: 2,
+        mainAxisExtent:isLandscape? 132.h:  225.h,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+       
       ),
+      itemCount: 8,
     );
   }
 }

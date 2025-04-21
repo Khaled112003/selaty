@@ -35,11 +35,11 @@ class FreshAndFastGridView extends StatelessWidget {
     return SizedBox(
       height:isLandscape? 270.h:  460.h, 
       child: GridView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) =>
             Padding(
-              padding: const EdgeInsets.only(right: 8),
+              padding: const EdgeInsets.only(left: 8),
               child: BestSellerItem(img: "assets/images/Strawberry.jpg"),
             ),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

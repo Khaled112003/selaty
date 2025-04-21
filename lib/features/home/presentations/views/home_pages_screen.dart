@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:selaty/features/home/presentations/views/favourite_page.dart';
 import 'package:selaty/features/home/presentations/views/home_screen.dart';
+import 'package:selaty/features/home/presentations/views/notification_screen.dart';
 import 'package:selaty/features/user/presentation/views/user_screen.dart';
 
 class HomePagesScreen extends StatefulWidget {
@@ -22,11 +24,11 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
   }
 
   List<Widget> pages = [
+    HomeScreen(),
+    FavouritePage(),
+    FavouritePage(),
+    NotificationScreen(),
     UserScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
   ];
 
   @override
@@ -102,8 +104,8 @@ IconData getIcon(int index, int currentIndex) {
   switch (index) {
     case 0:
       return currentIndex == index
-          ? CupertinoIcons.person_solid
-          : CupertinoIcons.person;
+          ? Icons.home
+          : Icons.home_filled;
     case 1:
       return currentIndex == index
           ? CupertinoIcons.heart_fill
@@ -114,9 +116,11 @@ IconData getIcon(int index, int currentIndex) {
           : Icons.notifications_none;
     case 4:
       return currentIndex == index
-          ? Icons.search
-          : Icons.search_sharp;
+          ? CupertinoIcons.person_solid
+          : CupertinoIcons.person;
     default:
       return CupertinoIcons.question;
   }
 }
+
+

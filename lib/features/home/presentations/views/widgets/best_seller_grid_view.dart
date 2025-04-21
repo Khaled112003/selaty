@@ -13,12 +13,12 @@ class BestSellerGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isLandscape = ScreenHelper.isLandscape(context);
-    final childAspectRatio = isLandscape ? 1.03: 0.81;
+    final childAspectRatio = isLandscape ? 1.05: 0.82;
     
     
     final crossAxisCount = isLandscape ? 3 : 2;
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => BestSellerItem(

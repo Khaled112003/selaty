@@ -40,7 +40,7 @@ class HighestSales extends StatelessWidget {
         ),
         verticalSpace(10),
         SizedBox(
-          height:ScreenHelper.isLandscape(context)? 120.h:160.h,
+          height:ScreenHelper.isLandscape(context)? 100.h:160.h,
           width: double.infinity,
           child: ListView(
          
@@ -48,12 +48,18 @@ class HighestSales extends StatelessWidget {
             children: List.generate(
                 5,
                 (index) => Padding(
-                    padding: const EdgeInsets.only(left: 8),
+                    padding: const EdgeInsets.only(left: 5),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.r),
                       child: Image.asset(
                         "assets/images/fruitsimg.jpg",
                         fit: BoxFit.fill,
+                        width: ScreenHelper.isLandscape(context)
+                            ? 260.w
+                            : 260.w,
+                        height: ScreenHelper.isLandscape(context)
+                            ? 100.h
+                            : 160.h,
                       ),
                     ))),
           ),

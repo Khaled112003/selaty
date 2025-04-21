@@ -13,7 +13,7 @@ class ClassificationItemListView extends StatelessWidget {
       scrollDirection: Axis.horizontal, 
       itemCount: 7, 
       itemBuilder: (context, index) => Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 5.w),
+        padding:  EdgeInsets.only(left: 7.w ),
         child: ClassificationItem(),
       ),
     );
